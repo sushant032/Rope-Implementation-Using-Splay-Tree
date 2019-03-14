@@ -28,7 +28,7 @@ public class Node {
             while(nodeCount > 0) 
             { 
                 Node node = q.peek(); 
-                System.out.print(node.weight); 
+                System.out.print(node.weight+" ("+node.data+" )"+node.parent+" "); 
                 q.remove(); 
                 if(node.lchild != null) 
                     q.add(node.lchild); 

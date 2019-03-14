@@ -29,9 +29,16 @@ public class main {
            System.out.println("Level Order: ");
            Node.printLevelOrder(root);
            System.out.println("Indexing Starts:");
-           for(int i=0;i<word.length();i++)
-            System.out.print(myRope.index(root,root,i));
-           System.out.println("");
+           root = Rope.index(root,root,0);
+//           root = root.parent;
+
+           
+//           myRope.printLeafs(root);
+           Node.printLevelOrder(root);
+//           System.out.println(root.parent.lchild.data);
+//           for(int i=0;i<word.length();i++)
+//            System.out.println(Rope.index(root,root,i));
+//           System.out.println("");
 
            menu main_menu = new menu();
            int response,inner_res;
@@ -51,8 +58,11 @@ public class main {
                        if(r1!=null){
                        System.out.println("Enter the index to search in rope 1: ");
                        inner_res = sc.nextInt();
-                       if(inner_res < r1.weight)
-                        System.out.println("The character at index( "+inner_res+") is " + Rope.index(root,r1, inner_res));
+                       if(inner_res < r1.weight){
+                        System.out.println("The character at index( "+inner_res+") is ");
+                        root = Rope.index(root,r1, inner_res);
+                        System.out.println("");
+                       }
                        else
                         System.out.println("Index out of range!");
                        }else{

@@ -34,7 +34,18 @@ public class Rope {
            }  
            return n;
    }
-   public static char index(Node root,Node node, int i){
+    public static int balanceWeights(Node root){
+       //Code to insert string 
+       if(root.lchild == null && root.rchild == null)
+           return root.weight;
+      int w1 =  balanceWeights(root.lchild);
+      int w2 = balanceWeights(root.rchild);
+      root.weight = w1+w2;
+      return root.weight;
+   }
+   
+   public static Node index(Node root,Node node, int i){
+//       System.out.println(node);
     if(i >node.weight)
         return index(root,node.rchild, i - node.weight);
     else if(node.lchild!=null && node.lchild.weight>i)
@@ -42,9 +53,14 @@ public class Rope {
     else if(node.rchild!=null)
         return index(root,node.rchild, i-node.lchild.weight);
     char ret = node.data.charAt(i);
-//    splay(root, node.parent);
-    return ret;
- 
+//    System.out.println("parent node to splay: "+node.parent);
+    root = splay(root, node.parent);
+       System.out.print(ret);
+       System.out.println("");
+//    System.out.println("root in index: "+root);
+//    System.out.println("Indexing done!");
+    balanceWeights(root);
+    return root;
    }
    
    public static Node concat(Node rope1, Node rope2){
@@ -71,22 +87,13 @@ public class Rope {
            System.out.print(n.data);
        printLeafs(n.lchild);
        printLeafs(n.rchild);
-   }
-  
-   void insert_word(String str){
-       //Code to insert string 
-       
-   }
-   
+   }  
     public static void leftRotate(Node root,Node x){
       Node y = x.rchild;
-      if(y!=null){
-          if(y.lchild!=null){
-            x.rchild = y.lchild;
-            y.lchild.parent = x;
-          }
+      
+        x.rchild = y.lchild;
+        y.lchild.parent = x;
         y.parent = x.parent;
-      }
       if(x.parent == null){
         root = y;
       }else{
@@ -95,20 +102,16 @@ public class Rope {
         else
           x.parent.rchild = y;
       }
-      if(y!=null)
-        y.lchild = x;
+      y.lchild = x;
       x.parent = y;
     }
     
     public static void rightRotate(Node root,Node x){
         Node y = x.lchild;
-         if(y!=null){
-            if(y.rchild!=null){
-                x.lchild = y.rchild;
-                y.rchild.parent = x;
-            }
+      
+            x.lchild = y.rchild;
+            y.rchild.parent = x;
             y.parent = x.parent;
-         }
         if(x.parent == null){
           root = y;
         }else{
@@ -117,25 +120,56 @@ public class Rope {
           else
             x.parent.rchild = y;
         }
-        if(y!=null)
-            y.rchild = x;
+        y.rchild = x;
         x.parent = y;
     }
     
-    public static void splay(Node root,Node node){
+    public static Node splay(Node root,Node node){
 //        System.out.println(node.data);
         while(node.parent!=null){
-            Node p;
-            System.out.println(node.parent);
+            Node p,gp;
+            System.out.println(node);
             p = node.parent;
+            gp = p.parent;
+            //left subtree
             if(node == p.lchild){
-                System.out.println("right");
-                rightRotate(root,node);
-            }
-            else if(node == p.rchild){
-                System.out.println("left");
-                leftRotate(root, node);
-            }
+                //Child of root
+                if(gp == null){
+//                    System.out.println("Child of root!");
+                    rightRotate(root, p);
+                }
+                //zig-zag
+                else if(p == gp.rchild){
+//                    System.out.println("Left Zig-Zag");
+                    rightRotate(root, p);
+                    leftRotate(root, gp);
+                }else if(p == gp.lchild){
+//                    System.out.println("Left Zig-ZIg");
+                    rightRotate(root, p);
+                    rightRotate(root, gp);
+                }       
+            }else{
+             //right subtree
+               //Child of root
+                if(gp==null){
+//                    System.out.println("Child of root!");
+                    leftRotate(root, p);
+                }
+                //zig-zag
+                else if(p == gp.lchild){
+//                    System.out.println("Left Zig-Zag");
+                    leftRotate(root, p);
+                    rightRotate(root, gp);
+                }else if(p == gp.rchild){
+//                    System.out.println("Left Zig-ZIg");
+                    leftRotate(root, p);
+                    leftRotate(root, gp);
+                }
+            }   
         }
+        
+        root =  node;
+        return root;
+//        System.out.println("in splay: "+root);
     }
 }
