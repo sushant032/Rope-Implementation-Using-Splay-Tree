@@ -29,6 +29,7 @@ A splay tree is a self-adjusting binary search tree with the additional property
 Java, Netbeans
 
 *****************************************
+
 ### *Functions*:
 
 #### Function: *createRope*
@@ -109,16 +110,17 @@ Returns: void
 ```
 
 ***************************************
+
 ### *Author*:
 
 - **Sushant Kumar** *Initial Work* [sushant032](https://github.com/sushant032)
 
 ***************************************
-***************************************
+
 ### *References*:
 
-- **PARC Research Paper (Ropes Are Better Than Strings Hans-). Boehm, Russ Atkinson and Michael Plass)**
-- [pdf](http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-94-10_Ropes_Are_Better_Than_Strings.pdf)
+- **Palo Alto Research Center Research Paper (Ropes Are Better Than Strings Hans-J. Boehm, Russ Atkinson and Michael Plass )** [pdf](http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-94-10_Ropes_Are_Better_Than_Strings.pdf)
 - **Wikipedia** [Rope_(data_structure](https://en.wikipedia.org/wiki/Rope_(data_structure))
 - **Wikipedia** [Splay tree](https://en.wikipedia.org/wiki/Rope_(data_structure))
+
 ***************************************
