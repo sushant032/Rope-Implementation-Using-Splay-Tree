@@ -109,6 +109,100 @@ Returns: void
 5. Open the main.java file and run the file using "Shift+F6".
 ```
 
+**************************************
+
+### *Output*:
+```
+Create string
+my name is sushant kumar sinha
+2 2 2 2 2 2 3 2 2 2 2 2 2 3 
+Level Order: 
+30 (null )null 
+15 (null )rope.Node@55f96302 15 (null )rope.Node@55f96302 
+8 (null )rope.Node@3d4eac69 7 (null )rope.Node@3d4eac69 8 (null )rope.Node@42a57993 7 (null )rope.Node@42a57993 
+4 (null )rope.Node@75b84c92 4 (null )rope.Node@75b84c92 4 (null )rope.Node@6bc7c054 3 (ush )rope.Node@6bc7c054 4 (null )rope.Node@232204a1 4 (null )rope.Node@232204a1 4 (null )rope.Node@4aa298b7 3 (nha )rope.Node@4aa298b7 
+2 (my )rope.Node@7d4991ad 2 ( n )rope.Node@7d4991ad 2 (am )rope.Node@28d93b30 2 (e  )rope.Node@28d93b30 2 (is )rope.Node@1b6d3586 2 ( s )rope.Node@1b6d3586 2 (an )rope.Node@4554617c 2 (t  )rope.Node@4554617c 2 (ku )rope.Node@74a14482 2 (ma )rope.Node@74a14482 2 (r  )rope.Node@1540e19d 2 (si )rope.Node@1540e19d 
+Indexing Starts:
+rope.Node@7d4991ad
+rope.Node@7d4991ad
+m
+30 (null )null 
+2 (my )rope.Node@7d4991ad 28 (null )rope.Node@7d4991ad 
+13 (null )rope.Node@55f96302 15 (null )rope.Node@55f96302 
+6 (null )rope.Node@3d4eac69 7 (null )rope.Node@3d4eac69 8 (null )rope.Node@42a57993 7 (null )rope.Node@42a57993 
+2 ( n )rope.Node@75b84c92 4 (null )rope.Node@75b84c92 4 (null )rope.Node@6bc7c054 3 (ush )rope.Node@6bc7c054 4 (null )rope.Node@232204a1 4 (null )rope.Node@232204a1 4 (null )rope.Node@4aa298b7 3 (nha )rope.Node@4aa298b7 
+2 (am )rope.Node@28d93b30 2 (e  )rope.Node@28d93b30 2 (is )rope.Node@1b6d3586 2 ( s )rope.Node@1b6d3586 2 (an )rope.Node@4554617c 2 (t  )rope.Node@4554617c 2 (ku )rope.Node@74a14482 2 (ma )rope.Node@74a14482 2 (r  )rope.Node@1540e19d 2 (si )rope.Node@1540e19d 
+------------------Rope Data Structure Menu------------------
+1. Create new rope 	2. Char at Index	3. Select Ropes
+4. Concat Rope 
+0. Exit
+------------------------------------------------------------
+1
+Enter the string: 
+My name is
+------------------Rope Data Structure Menu------------------
+1. Create new rope 	2. Char at Index	3. Select Ropes
+4. Concat Rope 
+0. Exit
+------------------------------------------------------------
+1
+Enter the string: 
+Sushant Kumar
+------------------Rope Data Structure Menu------------------
+1. Create new rope 	2. Char at Index	3. Select Ropes
+4. Concat Rope 
+0. Exit
+------------------------------------------------------------
+3
+Select rope 1: 
+Displaying all ropes: 
+1. My name is
+2. Sushant Kumar
+1
+Select rope 2: 
+Displaying all ropes: 
+1. My name is
+2. Sushant Kumar
+2
+Ropes set for operations!
+------------------Rope Data Structure Menu------------------
+1. Create new rope 	2. Char at Index	3. Select Ropes
+4. Concat Rope 
+0. Exit
+------------------------------------------------------------
+4
+Concatenating Rope 1 and Rope 2
+My name isSushant Kumar
+------------------Rope Data Structure Menu------------------
+1. Create new rope 	2. Char at Index	3. Select Ropes
+4. Concat Rope 
+0. Exit
+------------------------------------------------------------
+2
+Enter the index to search in rope 1: 
+10
+Index out of range!
+------------------Rope Data Structure Menu------------------
+1. Create new rope 	2. Char at Index	3. Select Ropes
+4. Concat Rope 
+0. Exit
+------------------------------------------------------------
+2
+Enter the index to search in rope 1: 
+5
+The character at index( 5) is 
+rope.Node@677327b6
+m
+
+------------------Rope Data Structure Menu------------------
+1. Create new rope 	2. Char at Index	3. Select Ropes
+4. Concat Rope 
+0. Exit
+------------------------------------------------------------
+0
+Thank you for using the program.
+```
+
 ***************************************
 
 ### *Author*:
@@ -120,7 +214,7 @@ Returns: void
 ### *References*:
 
 - **Palo Alto Research Center Research Paper (Ropes Are Better Than Strings Hans-J. Boehm, Russ Atkinson and Michael Plass )** [pdf](http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-94-10_Ropes_Are_Better_Than_Strings.pdf)
-- **Wikipedia** [Rope_(data_structure](https://en.wikipedia.org/wiki/Rope_(data_structure))
+- **Wikipedia** [Rope_(data_structure)](https://en.wikipedia.org/wiki/Rope_(data_structure))
 - **Wikipedia** [Splay tree](https://en.wikipedia.org/wiki/Rope_(data_structure))
 
 ***************************************
